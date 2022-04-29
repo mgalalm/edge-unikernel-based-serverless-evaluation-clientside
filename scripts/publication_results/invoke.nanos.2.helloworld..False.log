@@ -1,0 +1,23 @@
+{
+    "48844004-c469-11ec-9f3b-e45f01827912": {
+        "activationId": "48844004-c469-11ec-9f3b-e45f01827912",
+        "message": "{\"message1\": \"hmmm 2022-04-25 07:28:42.61640152 +0000 UTC m=+20.103010705 development\"}",
+        "client_info": {
+            "elapsed_time": 22.698957920074463,
+            "blocking": true
+        }
+    },
+    "4884e02c-c469-11ec-90e3-e45f01827912": {
+        "activationId": "4884e02c-c469-11ec-90e3-e45f01827912",
+        "message": "{\"message1\": \"hmmm 2022-04-25 07:28:42.630218592 +0000 UTC m=+20.101877937 development\"}",
+        "client_info": {
+            "elapsed_time": 22.71390199661255,
+            "blocking": true
+        }
+    },
+    "client_info": {
+        "start_time": "1650871700.751576",
+        "end_time": "1650871723.4660769",
+        "total_elapsed_time": "22.714500904083252"
+    }
+}
