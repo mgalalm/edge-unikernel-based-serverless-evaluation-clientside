@@ -10,9 +10,6 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-'''
- ./invoker.py  2  myaction117
-'''
 def argument_parser(parser=None):
     if not parser:
         parser = argparse.ArgumentParser(description="OpenWhisk invocation")
@@ -24,6 +21,8 @@ def argument_parser(parser=None):
             + ' to a function (json)', default=None, required=False)
     parser.add_argument('--concurrent', action='store_true', dest='concurrent', 
             default=False, help='Concurrency concurrent|sequential')
+    
+    parser.add_argument('--type', metavar='type', type=str, help='Test type', default=None, required=True)
  
     args = parser.parse_args()
     if args.params is not None:
@@ -39,9 +38,11 @@ def invoke( cmd):
 def parse_response(text) :
 
         res = json.loads(text)
-        message = res['response']['result']['message']
+        result = res['response']['result']
+        print(res['response']['result'])
         return {
-            "message": message,
+            "message": result['message'],
+            "version" : result['version'],
             "raw": str(res),
             "activationId": res["activationId"]
         }
@@ -88,10 +89,11 @@ if __name__ == "__main__":
     cmd = f"wsk -i action invoke {args.func_names} --blocking"
     res = handler(event, cmd)
     # print(res['client_info']['total_elapsed_time'])
-    
-    params_fstr = ''.join(e for e in str(args.params) if e.isalnum() or e == ":") if args.params is not None else ''
-    
-    output_fname = ("../publication_results/invoke.{}.{}.{}.{}.{}.log".format("openwhisk", args.isize,
-        args.func_names, params_fstr, args.concurrent))
+
+    params_fstr = ''.join(e for e in str(args.params) if e.isalnum() or e == ":") if args.params is not None else 'no_parmas'
+    script_dir = os.path.dirname(__file__)
+    out_put_file_path = "../publication_results/files/invoke.{}.{}.{}.{}.{}.{}.log".format("openwhisk", args.isize,
+    args.func_names, args.type, params_fstr, args.concurrent)
+    output_fname = os.path.join(script_dir, out_put_file_path)
 
     to_file(output_fname, res)

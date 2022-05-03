@@ -1,0 +1,17 @@
+{
+    "92c124ef510a469a8124ef510a369a05": {
+        "message": "Hello World Openwhisk",
+        "version": 1,
+        "raw": "{'activationId': '92c124ef510a469a8124ef510a369a05', 'annotations': [{'key': 'path', 'value': 'guest/helloworld'}, {'key': 'waitTime', 'value': 2899}, {'key': 'kind', 'value': 'blackbox'}, {'key': 'limits', 'value': {'concurrency': 1, 'logs': 10, 'memory': 128, 'timeout': 60000}}, {'key': 'initTime', 'value': 157}], 'duration': 20176, 'end': 1651510324436, 'logs': [], 'name': 'helloworld', 'namespace': 'guest', 'publish': False, 'response': {'result': {'message': 'Hello World Openwhisk', 'version': 1}, 'status': 'success', 'success': True}, 'start': 1651510304260, 'subject': 'guest', 'version': '0.0.5'}",
+        "activationId": "92c124ef510a469a8124ef510a369a05",
+        "client_info": {
+            "elapsed_time": 23.408587217330933,
+            "blocking": true
+        }
+    },
+    "client_info": {
+        "start_time": "1651510301.0146",
+        "end_time": "1651510324.4240918",
+        "total_elapsed_time": "23.409491777420044"
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "e4caab14-caa0-11ec-867b-e45f01827912": {
+        "activationId": "e4caab14-caa0-11ec-867b-e45f01827912",
+        "message": "Hello World from Nanos",
+        "version": "1",
+        "client_info": {
+            "elapsed_time": 21.424039840698242,
+            "blocking": true
+        }
+    },
+    "e4cb4718-caa0-11ec-8695-e45f01827912": {
+        "activationId": "e4cb4718-caa0-11ec-8695-e45f01827912",
+        "message": "Hello World from Nanos",
+        "version": "1",
+        "client_info": {
+            "elapsed_time": 21.423805952072144,
+            "blocking": true
+        }
+    },
+    "client_info": {
+        "start_time": "1651555291.9721322",
+        "end_time": "1651555313.396497",
+        "total_elapsed_time": "21.424364805221558"
+    }
+}
