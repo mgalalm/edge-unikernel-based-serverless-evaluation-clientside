@@ -1,0 +1,37 @@
+{
+    "4e07a13d07cb455787a13d07cba557d4": {
+        "message": "Hello World Openwhisk",
+        "version": 1,
+        "raw": "{'activationId': '4e07a13d07cb455787a13d07cba557d4', 'annotations': [{'key': 'path', 'value': 'guest/helloworld'}, {'key': 'waitTime', 'value': 3209}, {'key': 'kind', 'value': 'blackbox'}, {'key': 'limits', 'value': {'concurrency': 1, 'logs': 10, 'memory': 128, 'timeout': 60000}}, {'key': 'initTime', 'value': 238}], 'duration': 20265, 'end': 1651510391384, 'logs': [], 'name': 'helloworld', 'namespace': 'guest', 'publish': False, 'response': {'result': {'message': 'Hello World Openwhisk', 'version': 1}, 'status': 'success', 'success': True}, 'start': 1651510371119, 'subject': 'guest', 'version': '0.0.5'}",
+        "activationId": "4e07a13d07cb455787a13d07cba557d4",
+        "client_info": {
+            "elapsed_time": 23.71678113937378,
+            "blocking": true
+        }
+    },
+    "c1513a29bcf349e5913a29bcf339e585": {
+        "message": "Hello World Openwhisk",
+        "version": 1,
+        "raw": "{'activationId': 'c1513a29bcf349e5913a29bcf339e585', 'annotations': [{'key': 'path', 'value': 'guest/helloworld'}, {'key': 'waitTime', 'value': 3322}, {'key': 'kind', 'value': 'blackbox'}, {'key': 'limits', 'value': {'concurrency': 1, 'logs': 10, 'memory': 128, 'timeout': 60000}}, {'key': 'initTime', 'value': 248}], 'duration': 20285, 'end': 1651510391514, 'logs': [], 'name': 'helloworld', 'namespace': 'guest', 'publish': False, 'response': {'result': {'message': 'Hello World Openwhisk', 'version': 1}, 'status': 'success', 'success': True}, 'start': 1651510371229, 'subject': 'guest', 'version': '0.0.5'}",
+        "activationId": "c1513a29bcf349e5913a29bcf339e585",
+        "client_info": {
+            "elapsed_time": 23.818318128585815,
+            "blocking": true
+        }
+    },
+    "6c88da8e854a4a3588da8e854aaa350a": {
+        "message": "Hello World Openwhisk",
+        "version": 1,
+        "raw": "{'activationId': '6c88da8e854a4a3588da8e854aaa350a', 'annotations': [{'key': 'path', 'value': 'guest/helloworld'}, {'key': 'waitTime', 'value': 3182}, {'key': 'kind', 'value': 'blackbox'}, {'key': 'limits', 'value': {'concurrency': 1, 'logs': 10, 'memory': 128, 'timeout': 60000}}, {'key': 'initTime', 'value': 294}], 'duration': 20334, 'end': 1651510391486, 'logs': [], 'name': 'helloworld', 'namespace': 'guest', 'publish': False, 'response': {'result': {'message': 'Hello World Openwhisk', 'version': 1}, 'status': 'success', 'success': True}, 'start': 1651510371152, 'subject': 'guest', 'version': '0.0.5'}",
+        "activationId": "6c88da8e854a4a3588da8e854aaa350a",
+        "client_info": {
+            "elapsed_time": 23.78319001197815,
+            "blocking": true
+        }
+    },
+    "client_info": {
+        "start_time": "1651510367.675141",
+        "end_time": "1651510391.4941819",
+        "total_elapsed_time": "23.819040775299072"
+    }
+}
