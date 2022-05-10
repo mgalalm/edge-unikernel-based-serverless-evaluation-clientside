@@ -33,10 +33,16 @@ def argument_parser(parser=None):
 def invoke(args):
     s = time.time()
     url = f"http://192.168.178.72:8080/{args.func_names}"
-    response = requests.get(url)
-    res = response.json()
-    e = time.time() - s
-    return (res, e)
+    res = {}
+    e = 0
+    try:
+        response = requests.get(url)
+        res = response.json()
+        e = time.time() - s
+    except requests.exceptions.RequestException as e:
+        pass
+    else:
+        return (res, e)
 
 def parse_response(res) :
         return res
@@ -50,12 +56,19 @@ def handler(event, args):
         res.append(p.apply_async(invoke, args=(args,)))
     all_result = {}
     
-    for i in res:
+    for idx, i in enumerate(res):
         r = i.get()
+        print(r)
+        rdict = {
+            'message' : None,
+            'version': 0,
+            'client_info': {'elapsed_time': 0, "blocking": True}
+        }
         # text = r[0].decode("ascii").split("\n",1)[1]
-        rdict = parse_response(r[0])
-        rdict['client_info'] = {'elapsed_time': r[1], "blocking": True}
-        all_result[rdict['activationId']] = rdict
+        if r is not None:
+            rdict = parse_response(r[0])
+            rdict['client_info'] = {'elapsed_time': r[1], "blocking": True}
+        all_result[idx + 1] = rdict
     
     end_time = time.time()
     p.close()
