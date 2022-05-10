@@ -1,4 +1,5 @@
 #!/bin/sh
+# ./ci.sh main.go
 if [ -z "$1" ]
   then
     echo "No argument supplied"

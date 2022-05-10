@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from subprocess import check_output
+from subprocess import check_output, CalledProcessError
 from multiprocessing.pool import ThreadPool
 import time
 import json
@@ -31,9 +31,15 @@ def argument_parser(parser=None):
 
 def invoke( cmd):
     s = time.time()
-    res =  check_output(cmd.split())
-    e = time.time() - s
-    return (res, e)
+    res = "{}"
+    e = 0
+    try:
+        res =  check_output(cmd.split())
+        e = time.time() - s
+    except CalledProcessError as e:
+         pass
+    else:
+        return (res, e)
 
 def parse_response(text) :
 
@@ -57,12 +63,19 @@ def handler(event, cmd):
         res.append(p.apply_async(invoke, args=(cmd,)))
     all_result = {}
     
-    for i in res:
+    for idx, i in enumerate(res):
         r = i.get()
-        text = r[0].decode("ascii").split("\n",1)[1]
-        rdict = parse_response(text)
-        rdict['client_info'] = {'elapsed_time': r[1], "blocking": True}
-        all_result[rdict['activationId']] = rdict
+        rdict = {
+            'message' : None,
+            'version': 0,
+            'client_info': {'elapsed_time': 0, "blocking": True}
+        }
+        if r is not None:
+            text = r[0].decode("ascii").split("\n",1)[1]
+            rdict = parse_response(text)
+            rdict['client_info'] = {'elapsed_time': r[1], "blocking": True}
+        # rdict['id'] = idx
+        all_result[idx + 1] = rdict
     
     end_time = time.time()
     p.close()

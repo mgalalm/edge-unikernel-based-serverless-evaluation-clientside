@@ -1,16 +1,16 @@
 {
-    "d1fe99a0-caa0-11ec-a42e-e45f01827912": {
-        "activationId": "d1fe99a0-caa0-11ec-a42e-e45f01827912",
+    "1": {
+        "activationId": "ec10b84a-cf83-11ec-ab7e-e45f01827912",
         "message": "Hello World from Nanos",
         "version": "1",
         "client_info": {
-            "elapsed_time": 21.39273428916931,
+            "elapsed_time": 21.936789989471436,
             "blocking": true
         }
     },
     "client_info": {
-        "start_time": "1651555260.437792",
-        "end_time": "1651555281.830861",
-        "total_elapsed_time": "21.39306902885437"
+        "start_time": "1652092604.7635782",
+        "end_time": "1652092626.700767",
+        "total_elapsed_time": "21.937188863754272"
     }
 }
