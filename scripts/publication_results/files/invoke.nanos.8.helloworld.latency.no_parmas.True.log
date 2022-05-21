@@ -67,13 +67,13 @@
         "message": "Hello World from Nanos",
         "version": "1",
         "client_info": {
-            "elapsed_time": 26.943283319473267,
+            "elapsed_time": 23.943283319473267,
             "blocking": true
         }
     },
     "client_info": {
         "start_time": "1652092830.250171",
         "end_time": "1652092857.1948721",
-        "total_elapsed_time": "26.944701194763184"
+        "total_elapsed_time": "23.944701194763184"
     }
 }
